@@ -1,7 +1,9 @@
 class Solution {
 public:
     vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
-        vector<vector<int>> graph(n);
+        if(n == 1)
+            return {0};
+	vector<vector<int>> graph(n);
         vector<int>indegree(n,0);
         for(auto it : edges){
             graph[it[0]].push_back(it[1]);
